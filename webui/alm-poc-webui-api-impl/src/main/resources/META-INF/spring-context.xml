@@ -38,7 +38,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.vha.techdev"/>
 
-    <jaxrs:server bindingId="testServices" address="/testServices">
+    <jaxrs:server name="testServices" address="/testServices">
 
         <jaxrs:serviceBeans>
             <ref bean="helloService#default"/>

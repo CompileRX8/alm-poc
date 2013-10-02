@@ -212,7 +212,7 @@
         <profile>
             <id>chrome</id>
             <properties>
-                <seleniumBrowser>*googlechrome</seleniumBrowser>
+                <seleniumBrowser>*googlechrome C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</seleniumBrowser>
             </properties>
         </profile>
         <profile>

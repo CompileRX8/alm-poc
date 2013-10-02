@@ -26,6 +26,14 @@
     </issueManagement -->
 
     <distributionManagement>
+        <repository>
+            <id>techdev.vha.com</id>
+            <url>http://acldlu01tld:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>techdev.vha.com.snapshots</id>
+            <url>http://acldlu01tld:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
         <site>
             <id>almpoc.site</id>
             <name>VHA ALM POC Website</name>
