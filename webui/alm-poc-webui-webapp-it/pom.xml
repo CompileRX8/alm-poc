@@ -48,25 +48,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>selenium-maven-plugin</artifactId>
                     <version>${seleniumPluginVersion}</version>
-<!--                    <dependencies>
-                        <dependency>
-                            <groupId>org.seleniumhq.selenium</groupId>
-                            <artifactId>selenium-server</artifactId>
-                            <version>${selenium-server.version}</version>
-                        </dependency>
-
-                        <dependency>
-                            <groupId>org.seleniumhq.selenium</groupId>
-                            <artifactId>selenium-remote-driver</artifactId>
-                            <version>${selenium-server.version}</version>
-                        </dependency>
-
-                        <dependency>
-                            <groupId>org.seleniumhq.selenium</groupId>
-                            <artifactId>selenium-api</artifactId>
-                            <version>${selenium-server.version}</version>
-                        </dependency>
-                    </dependencies>  -->
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -212,7 +193,7 @@
         <profile>
             <id>chrome</id>
             <properties>
-                <seleniumBrowser>*googlechrome C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</seleniumBrowser>
+                <seleniumBrowser>*googlechrome</seleniumBrowser>
             </properties>
         </profile>
         <profile>
