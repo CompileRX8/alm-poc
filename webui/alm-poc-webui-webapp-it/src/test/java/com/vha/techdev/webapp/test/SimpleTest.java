@@ -21,13 +21,15 @@ package com.vha.techdev.webapp.test;
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.vha.techdev.ComponentInfo;
 import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * @author Olivier Lamy
  */
-public class SimpleTest
-        extends TestCase {
+public class SimpleTest {
 
+    @Test
     public void testSimple() throws Exception {
 
         int seleniumPort = Integer.parseInt(System.getProperty("selenium.port", "4444"));
@@ -41,14 +43,14 @@ public class SimpleTest
         // wait a bit ajax response
         Thread.sleep(1000);
         String version = s.getText("version");
-        assertEquals(ComponentInfo.IMPLEMENTATION.toString(), version);
+        Assert.assertEquals(ComponentInfo.IMPLEMENTATION.toString(), version);
 
         s.type("who", "foo");
         s.click("send-btn");
         // wait a bit ajax response
         Thread.sleep(1000);
         String text = s.getText("response");
-        assertEquals("Hello foo", text);
+        Assert.assertEquals("Hello foo", text);
 
     }
 

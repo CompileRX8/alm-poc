@@ -21,13 +21,13 @@ package com.vha.techdev.api.impl;
 
 import com.vha.techdev.api.HelloService;
 
-import junit.framework.TestCase;
 import org.apache.catalina.Context;
 import org.apache.catalina.deploy.ApplicationParameter;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
 import org.apache.cxf.transport.servlet.CXFServlet;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -38,8 +38,7 @@ import org.springframework.web.context.ContextLoaderListener;
  * @author Olivier Lamy
  */
 @RunWith(JUnit4.class)
-public class TestDefaultHelloService
-        extends TestCase {
+public class TestDefaultHelloService {
     int port;
 
     private Tomcat tomcat;
@@ -90,6 +89,14 @@ public class TestDefaultHelloService
                 JAXRSClientFactory.create("http://localhost:" + port + "/" + getRestServicesPath() + "/testServices/",
                         HelloService.class);
         String who = "foo";
-        assertEquals("Hello " + who, service.sayHello(who));
+        Assert.assertEquals("Hello " + who, service.sayHello(who));
+    }
+
+    @Test
+    public void testVersion() {
+        HelloService service =
+                JAXRSClientFactory.create("http://localhost:" + port + "/" + getRestServicesPath() + "/testServices/",
+                        HelloService.class);
+        Assert.assertNotNull(service.getVersion());
     }
 }
