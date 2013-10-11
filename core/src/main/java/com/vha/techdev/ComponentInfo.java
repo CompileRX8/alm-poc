@@ -10,6 +10,10 @@ public class ComponentInfo {
         public final String TITLE;
         public final String VERSION;
         public final String VENDOR;
+
+        public String toString() {
+            return TITLE + " : " + VERSION + " : " + VENDOR;
+        }
     }
 
     private static final Package pkg = ComponentInfo.class.getPackage();

@@ -39,11 +39,23 @@
         </div>
         <div class="span10"></div>
 
+        <div id="version" class="span6">
+        </div>
+        <div class="span10"></div>
+
     </div>
 </div>
 </body>
 <script>
     $(function () {
+        $.ajax({
+            type: "GET",
+            url: "restServices/testServices/HelloService/getVersion"
+        }).done(function (msg) {
+                    $("#version").addClass("alert-message");
+                    $("#version").addClass("info");
+                    $("#version").html(msg);
+                });
         $("#send-btn").on("click", function () {
             $.ajax({
                 type: "GET",
