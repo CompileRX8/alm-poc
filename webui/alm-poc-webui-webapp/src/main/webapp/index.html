@@ -71,18 +71,18 @@
             type: "GET",
             url: "restServices/testServices/HelloService/getVersion"
         }).done(function (msg) {
+                    $("#version").html(msg);
                     $("#version").addClass("alert-message");
                     $("#version").addClass("info");
-                    $("#version").html(msg);
                 });
         $("#send-btn").on("click", function () {
             $.ajax({
                 type: "GET",
                 url: "restServices/testServices/HelloService/sayHello/" + $("#who").val()
             }).done(function (msg) {
+                        $("#response").html(msg);
                         $("#response").addClass("alert-message");
                         $("#response").addClass("info");
-                        $("#response").html(msg);
                     });
         })
         $("#upload-btn").click(function () {
@@ -106,9 +106,9 @@
                         var contentType = msg["contentType"];
                         var length = msg["length"];
                         $("#file-progress").attr({hidden: true});
+                        $("#file-response").html(name + ":" + contentType + ":" + length);
                         $("#file-response").addClass("alert-message");
                         $("#file-response").addClass("info");
-                        $("#file-response").html(name + ":" + contentType + ":" + length);
                     });
         })
     });

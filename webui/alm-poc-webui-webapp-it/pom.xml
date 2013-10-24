@@ -37,7 +37,6 @@
         <selenium.port>4444</selenium.port>
         <tomcat.port>9898</tomcat.port>
         <serverUrl>http://localhost:${tomcat.port}/</serverUrl>
-        <seleniumBrowser>*firefox</seleniumBrowser>
     </properties>
 
     <build>
@@ -102,9 +101,7 @@
                         </goals>
                         <configuration>
                             <systemProperties>
-                                <selenium.port>${selenium.port}</selenium.port>
                                 <serverUrl>${serverUrl}</serverUrl>
-                                <seleniumBrowser>${seleniumBrowser}</seleniumBrowser>
                             </systemProperties>
                         </configuration>
                     </execution>
@@ -188,30 +185,6 @@
     </dependencies>
 
     <profiles>
-        <profile>
-            <id>firefox</id>
-            <properties>
-                <seleniumBrowser>*firefox</seleniumBrowser>
-            </properties>
-        </profile>
-        <profile>
-            <id>chrome</id>
-            <properties>
-                <seleniumBrowser>*googlechrome</seleniumBrowser>
-            </properties>
-        </profile>
-        <profile>
-            <id>iexplore</id>
-            <properties>
-                <seleniumBrowser>*iexplore</seleniumBrowser>
-            </properties>
-        </profile>
-        <profile>
-            <id>safari</id>
-            <properties>
-                <seleniumBrowser>*safari</seleniumBrowser>
-            </properties>
-        </profile>
         <profile>
             <id>headless</id>
             <build>
