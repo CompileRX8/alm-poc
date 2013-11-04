@@ -34,4 +34,9 @@ public interface HelloService {
     @GET
     @Produces({MediaType.TEXT_PLAIN})
     String sayHello(@PathParam("who") String who);
+
+    @Path("getVersion")
+    @GET
+    @Produces({MediaType.TEXT_PLAIN})
+    String getVersion();
 }

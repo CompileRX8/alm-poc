@@ -39,19 +39,76 @@
         </div>
         <div class="span10"></div>
 
+        <div id="version" class="span6">
+        </div>
+        <div class="span10"></div>
+
+        <div class="span16">
+            <label for="uploadfile">File ?</label>
+            <input id="uploadfile" type="file" name="uploadfile"/>
+        </div>
+
+        <div class="span16">
+            <input id="upload-btn" type="button" class="btn" value="upload"/>
+            <progress id="file-progress" hidden></progress>
+        </div>
+
+        <div id="file-response" class="span6">
+        </div>
+        <div class="span10"></div>
+
     </div>
 </div>
 </body>
 <script>
+    function progressHandlingFunction(e) {
+        if(e.lengthComputable) {
+            $("#file-progress").attr({hidden: false, value: e.loaded, max: e.total});
+        }
+    }
     $(function () {
+        $.ajax({
+            type: "GET",
+            url: "restServices/testServices/HelloService/getVersion"
+        }).done(function (msg) {
+                    $("#version").html(msg);
+                    $("#version").addClass("alert-message");
+                    $("#version").addClass("info");
+                });
         $("#send-btn").on("click", function () {
             $.ajax({
                 type: "GET",
                 url: "restServices/testServices/HelloService/sayHello/" + $("#who").val()
             }).done(function (msg) {
+                        $("#response").html(msg);
                         $("#response").addClass("alert-message");
                         $("#response").addClass("info");
-                        $("#response").html(msg);
+                    });
+        })
+        $("#upload-btn").click(function () {
+            var formData = new FormData();
+            formData.append("uploadfile", $("#uploadfile")[0].files[0]);
+            $.ajax({
+                type: "POST",
+                url: "restServices/testServices/FileService/fileUpload",
+                xhr: function() {
+                    var myXhr = $.ajaxSettings.xhr();
+                    if(myXhr.upload) {
+                        myXhr.upload.addEventListener("progress", progressHandlingFunction, false);
+                    }
+                    return myXhr;
+                },
+                processData: false,
+                contentType: false,
+                data: formData
+            }).done(function (msg) {
+                        var name = msg["name"];
+                        var contentType = msg["contentType"];
+                        var length = msg["length"];
+                        $("#file-progress").attr({hidden: true});
+                        $("#file-response").html(name + ":" + contentType + ":" + length);
+                        $("#file-response").addClass("alert-message");
+                        $("#file-response").addClass("info");
                     });
         })
     });

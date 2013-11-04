@@ -19,6 +19,7 @@ package com.vha.techdev.api.impl;
  * under the License.
  */
 
+import com.vha.techdev.ComponentInfo;
 import com.vha.techdev.api.HelloService;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +31,9 @@ public class DefaultHelloService
         implements HelloService {
     public String sayHello(String who) {
         return "Hello " + who;
+    }
+
+    public String getVersion() {
+        return ComponentInfo.IMPLEMENTATION.toString();
     }
 }
