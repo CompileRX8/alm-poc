@@ -37,6 +37,7 @@
         <dependency>
             <groupId>com.vha.techdev</groupId>
             <artifactId>alm-poc-core</artifactId>
+            <version>${parent.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.ws.rs</groupId>
