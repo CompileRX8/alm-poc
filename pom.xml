@@ -6,7 +6,7 @@
     <groupId>com.vha.techdev</groupId>
     <artifactId>alm-poc</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>ALM POC</name>
     <url>http://www.vha.com</url>
