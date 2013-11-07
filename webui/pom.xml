@@ -24,10 +24,10 @@
     <parent>
         <artifactId>alm-poc</artifactId>
         <groupId>com.vha.techdev</groupId>
-        <version>1.0</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>alm-poc-webui</artifactId>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ALM POC :: WebUI</name>
 
