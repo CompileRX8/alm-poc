@@ -31,24 +31,13 @@
     <packaging>pom</packaging>
 
     <properties>
-        <seleniumPluginVersion>2.3</seleniumPluginVersion>
-        <selenium-server.version>2.37.0</selenium-server.version>
-        <selenium.port>4444</selenium.port>
+        <selenium-server.version>2.42.2</selenium-server.version>
         <tomcat.port>9898</tomcat.port>
         <serverUrl>http://localhost:${tomcat.port}/</serverUrl>
     </properties>
 
     <build>
         <testSourceDirectory>src/test/java</testSourceDirectory>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>selenium-maven-plugin</artifactId>
-                    <version>${seleniumPluginVersion}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -135,23 +124,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>selenium-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>start-server</goal>
-                        </goals>
-                        <configuration>
-                            <background>true</background>
-                            <port>${selenium.port}</port>
-                            <logOutput>true</logOutput>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
@@ -181,30 +153,12 @@
             <version>${selenium-server.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-htmlunit-driver</artifactId>
+            <version>${selenium-server.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>headless</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>selenium-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>xvfb</id>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>xvfb</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
 
 </project>
