@@ -26,24 +26,24 @@
 
     <distributionManagement>
         <repository>
-            <id>techdev.vha.com</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/releases/</url>
+            <id>highley.net</id>
+            <url>http://engineering:8081/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>techdev.vha.com.snapshots</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/snapshots/</url>
+            <id>highley.net.snapshots</id>
+            <url>http://engineering:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
         <site>
             <id>almpoc.site</id>
             <name>VHA ALM POC Website</name>
-            <url>scpexe://acldlu01tld/opt/alm-poc/</url>
+            <url>scpexe://engineering/opt/alm-poc/</url>
         </site>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>techdev.vha.com</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/releases/</url>
+            <id>highley.net</id>
+            <url>http://engineering:8081/nexus/content/repositories/releases/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -52,8 +52,8 @@
             </snapshots>
         </repository>
         <repository>
-            <id>techdev.vha.com.snapshots</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/snapshots/</url>
+            <id>highley.net.snapshots</id>
+            <url>http://engineering:8081/nexus/content/repositories/snapshots/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -62,23 +62,23 @@
             </releases>
         </repository>
         <repository>
-            <id>techdev.vha.com.central-mirror</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/central/</url>
+            <id>highley.net.central-mirror</id>
+            <url>http://engineering:8081/nexus/content/repositories/central/</url>
         </repository>
         <repository>
-            <id>techdev.vha.com.thirdparty-mirror</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/thirdparty/</url>
+            <id>highley.net.thirdparty-mirror</id>
+            <url>http://engineering:8081/nexus/content/repositories/thirdparty/</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
         <pluginRepository>
-            <id>techdev.vha.com.central-mirror</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/central/</url>
+            <id>highley.net.central-mirror</id>
+            <url>http://engineering:8081/nexus/content/repositories/central/</url>
         </pluginRepository>
         <pluginRepository>
-            <id>techdev.vha.com.thirdparty-mirror</id>
-            <url>http://acldlu01tld:8081/nexus/content/repositories/thirdparty/</url>
+            <id>highley.net.thirdparty-mirror</id>
+            <url>http://engineering:8081/nexus/content/repositories/thirdparty/</url>
         </pluginRepository>
     </pluginRepositories>
 
